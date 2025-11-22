@@ -1,0 +1,113 @@
+.why-choose-section {
+  position: relative;
+  background: linear-gradient(180deg, #6c00007b, #53535391);
+  color: #fff;
+  overflow: hidden;
+
+  .why-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 30% 20%,
+      rgba(108, 0, 0, 0.15),
+      transparent 60%
+    );
+    filter: blur(100px);
+    animation: moveGradient 10s ease-in-out infinite alternate;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(255, 0, 0, 0.15);
+    padding: 0.4rem 1.2rem;
+    border-radius: 9999px;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-top: 1rem;
+    background: linear-gradient(90deg, #890101, #76020290);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtext {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* Cards */
+  .reason-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    position: relative;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    box-shadow: 0 0 0 transparent;
+
+    &:hover {
+      box-shadow: 0 8px 40px rgba(108, 0, 0, 0.25);
+      transform: translateY(-6px);
+      border-color: rgba(99, 0, 0, 0.2);
+    }
+
+    .icon-box {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      transition: transform 0.4s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+
+      .icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        color: #fff;
+      }
+
+      .group:hover & {
+        transform: rotate(10deg) scale(1.15);
+      }
+    }
+
+    .reason-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      transition: color 0.3s ease;
+
+      .group:hover & {
+        color: #00b4d8;
+      }
+    }
+
+    .reason-description {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  /* Subtle gradient animation */
+  @keyframes moveGradient {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(50px);
+    }
+  }
+}

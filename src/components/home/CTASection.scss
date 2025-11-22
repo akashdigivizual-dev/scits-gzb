@@ -1,0 +1,197 @@
+// CTA Section Styles
+.cta-section {
+  position: relative;
+  padding: 6rem 1rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #4f46e5, #1e1b4b);
+  color: #fff;
+  text-align: center;
+
+  // Animated background overlay
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #4f46e5, #9333ea, #06b6d4);
+    background-size: 300% 300%;
+    animation: gradientFlow 12s ease infinite;
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  .cta-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10;
+    animation: fadeUp 1.2s ease-out;
+  }
+
+  .cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cta-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #e0e7ff;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    animation: pulse 3s infinite;
+  }
+
+  .cta-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+
+    .highlight {
+      background: linear-gradient(90deg, #a78bfa, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .cta-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-out;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    .cta-primary-btn {
+      background: linear-gradient(90deg, #880000, #784848);
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 18px rgba(229, 70, 70, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 0, 0, 0.776);
+      }
+
+      .icon {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover .icon {
+        transform: translateX(5px);
+      }
+    }
+
+    .cta-secondary-btn {
+      border: 2px solid rgba(97, 1, 1, 0.3);
+      color: #fff;
+      background: transparent;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .cta-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 5.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .contact-icon {
+        color: #ffffff;
+        width: 24px;
+        height: 24px;
+      }
+
+      .contact-label {
+        font-size: 0.8rem;
+        color: #e1cbcb;
+      }
+
+      .contact-value {
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+}
+
+// === Animations ===
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}

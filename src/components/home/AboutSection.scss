@@ -1,0 +1,180 @@
+.about-section {
+  position: relative;
+  background: linear-gradient(180deg, #0a0a0a 0%, #101820 100%);
+  color: #fff;
+  overflow: hidden;
+
+  .about-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(0, 180, 216, 0.15),
+      transparent 70%
+    );
+    filter: blur(100px);
+    z-index: 0;
+    animation: floatBackground 10s ease-in-out infinite alternate;
+  }
+
+  .section-label {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.15);
+    color: #00b4d8;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.2s ease forwards;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff0000a3, #b8eaf3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtext {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    animation: fadeInUp 1.4s ease forwards;
+  }
+
+  /* Value Cards */
+  .value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 10px 30px rgba(205, 15, 15, 0.3);
+      transform: translateY(-5px);
+      .icon-wrapper {
+        background: linear-gradient(135deg, #a30606d1, #ffffff);
+        transform: rotate(8deg);
+      }
+    }
+
+    .icon-wrapper {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgb(255, 255, 255);
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+        color: #ffffff;
+      }
+    }
+
+    .value-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: #fff;
+    }
+
+    .value-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  /* Info Box */
+  .info-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        rgba(167, 3, 3, 0.2),
+        transparent 60%,
+        rgba(244, 1, 1, 0.2)
+      );
+      animation: rotateLight 15s linear infinite;
+      z-index: 0;
+    }
+
+    .info-text {
+      position: relative;
+      z-index: 1;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      p {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rotateLight {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes floatBackground {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(40px);
+    }
+  }
+}

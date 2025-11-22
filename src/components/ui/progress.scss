@@ -1,0 +1,8 @@
+// Progress component styles
+.progress-indicator {
+    @for $i from 0 through 100 {
+        &[data-value="#{$i}"] {
+            transform: translateX(calc(-1 * (100% - #{$i * 1%})));
+        }
+    }
+}

@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+.courses-page {
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+  overflow-x: hidden;
+  animation: fadeInPage 1s ease-in-out;
+}
+
+.courses-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// ---------------------
+// HERO SECTION
+// ---------------------
+.courses-hero {
+  position: relative;
+  background: linear-gradient(135deg, #f9000063 0%, #6b0000 100%);
+  color: #580000;
+  text-align: center;
+  padding: 6rem 0 5rem;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 120%;
+    height: 140%;
+    background: radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.15) 0%,
+      transparent 70%
+    );
+    animation: moveBg 12s linear infinite;
+  }
+
+  .courses-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    animation: popIn 1.2s ease forwards;
+  }
+
+  .courses-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    animation: slideUp 1.2s ease forwards;
+  }
+
+  .courses-hero-description {
+    font-size: 1.1rem;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.9;
+    animation: fadeInUp 1.5s ease;
+  }
+}
+
+// ---------------------
+// COURSES SECTION
+// ---------------------
+.courses-list-section {
+  padding: 5rem 0;
+
+  .courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .course-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.25);
+    }
+
+    &.course-blue {
+      border-top: 6px solid #2563eb;
+    }
+    &.course-green {
+      border-top: 6px solid #16a34a;
+    }
+    &.course-orange {
+      border-top: 6px solid #f97316;
+    }
+    &.course-purple {
+      border-top: 6px solid #8b5cf6;
+    }
+    &.course-indigo {
+      border-top: 6px solid #4f46e5;
+    }
+
+    .course-content {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: flex-start;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
+    }
+
+    // Left side
+    .course-left {
+      flex: 1;
+
+      .course-icon-wrapper {
+        background: linear-gradient(135deg, #e0e7ff, #f1f5f9);
+        border-radius: 16px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+
+        .course-icon {
+          color: #2563eb;
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .course-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.8rem;
+      }
+
+      .course-description {
+        font-size: 1rem;
+        color: #475569;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .course-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+
+        .course-meta-item {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+
+          .meta-icon {
+            color: #2563eb;
+            width: 22px;
+            height: 22px;
+          }
+
+          .meta-label {
+            font-size: 0.85rem;
+            color: #64748b;
+          }
+
+          .meta-value {
+            font-weight: 600;
+            color: #1e293b;
+          }
+        }
+      }
+
+      .enroll-link {
+        .enroll-button {
+          background: linear-gradient(90deg, #650000, #cf0000);
+          color: white;
+          font-weight: 600;
+          border-radius: 10px;
+          padding: 0.7rem 1.5rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(250, 96, 96, 0.4);
+          }
+        }
+      }
+    }
+
+    // Right side
+    .course-right {
+      flex: 1.2;
+      background: rgba(241, 245, 249, 0.6);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(241, 245, 249, 0.8);
+      }
+
+      .course-topics-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: #1e293b;
+      }
+
+      .course-topics {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .course-topic {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+
+          .topic-dot {
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(90deg, #eb2525, #600000);
+            border-radius: 50%;
+            animation: blink 2s infinite ease-in-out;
+          }
+
+          .topic-text {
+            font-size: 0.95rem;
+            color: #475569;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------------
+// CTA SECTION
+// ---------------------
+.courses-cta {
+  background: linear-gradient(135deg, #660000 0%, #950000 100%);
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  box-shadow: 0 -8px 40px rgba(37, 99, 235, 0.3);
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .cta-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta-description {
+      font-size: 1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+
+      .cta-btn-primary {
+        background: white;
+        color: #2563eb;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 0.8rem 1.6rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+          background: #e0e7ff;
+        }
+      }
+
+      .cta-btn-outline {
+        border: 2px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 10px;
+        padding: 0.8rem 1.6rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// ---------------------
+// Animations
+// ---------------------
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes moveBg {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-10%); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

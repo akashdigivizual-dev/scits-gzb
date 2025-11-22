@@ -1,0 +1,33 @@
+// NotFound page styles
+.notfound-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+}
+
+.notfound-content {
+    text-align: center;
+
+    .notfound-title {
+        margin-bottom: 1rem;
+        font-size: 2.25rem;
+        font-weight: 700;
+    }
+
+    .notfound-message {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: #6b7280;
+    }
+
+    .notfound-link {
+        color: #3b82f6;
+        text-decoration: underline;
+
+        &:hover {
+            color: #1d4ed8;
+        }
+    }
+}

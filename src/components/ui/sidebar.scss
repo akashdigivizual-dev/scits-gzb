@@ -1,0 +1,21 @@
+// Sidebar component styles
+:root {
+    --sidebar-width: 16rem;
+    --sidebar-width-icon: 3rem;
+    --sidebar-width-mobile: 18rem;
+}
+
+.sidebar-mobile {
+    --sidebar-width: 18rem;
+}
+
+.sidebar-skeleton-text {
+    max-width: var(--skeleton-width, 70%);
+}
+
+// Generate classes for different skeleton widths
+@for $i from 50 through 90 {
+    [data-skeleton-width="#{$i}%"] .sidebar-skeleton-text {
+        max-width: calc(#{$i} * 1%);
+    }
+}
